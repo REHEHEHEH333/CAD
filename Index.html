@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Aided Dispatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Computer Aided Dispatch System</h1>
+    </header>
+    <main>
+        <section id="dispatch-area">
+            <h2>Dispatch a Unit</h2>
+            <form id="dispatch-form">
+                <label for="unit">Unit:</label>
+                <input type="text" id="unit" name="unit" required>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+                <label for="call-type">Call Type:</label>
+                <select id="call-type" name="call-type">
+                    <option value="emergency">Emergency</option>
+                    <option value="non-emergency">Non-Emergency</option>
+                </select>
+                <button type="submit">Dispatch</button>
+            </form>
+            <div id="dispatch-log"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
