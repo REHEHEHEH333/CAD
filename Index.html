@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Aided Dispatch</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
+    <header class="bg-primary text-white text-center py-3">
         <h1>Computer Aided Dispatch System</h1>
     </header>
-    <main>
+
+    <main class="container mt-4">
         <section id="dispatch-area">
             <h2>Dispatch a Unit</h2>
-            <form id="dispatch-form">
-                <label for="unit">Unit:</label>
-                <input type="text" id="unit" name="unit" required>
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required>
-                <label for="call-type">Call Type:</label>
-                <select id="call-type" name="call-type">
+            <form id="dispatch-form" class="form-inline mb-3">
+                <input type="text" id="unit" class="form-control mr-2" placeholder="Unit" required>
+                <input type="text" id="location" class="form-control mr-2" placeholder="Location" required>
+                <select id="call-type" class="form-control mr-2">
                     <option value="emergency">Emergency</option>
                     <option value="non-emergency">Non-Emergency</option>
                 </select>
-                <button type="submit">Dispatch</button>
+                <button type="submit" class="btn btn-success">Dispatch</button>
             </form>
-            <div id="dispatch-log"></div>
+            <div id="dispatch-log" class="mt-4"></div>
+            <h3 class="mt-5">Dispatch History</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Location</th>
+                        <th>Call Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table"></tbody>
+            </table>
         </section>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
